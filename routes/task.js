@@ -2,7 +2,7 @@ const { application } = require('express');
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://admin:pre1958@saude-shard-00-00.3nvl4.mongodb.net:27017,saude-shard-00-01.3nvl4.mongodb.net:27017,saude-shard-00-02.3nvl4.mongodb.net:27017/indications?authSource=admin&replicaSet=atlas-l839ip-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true", { useNewUrlParser: true });
+mongoose.connect("", { useNewUrlParser: true });
 
 
 var Schema = mongoose.Schema;
