@@ -1,0 +1,188 @@
+<h2> Visualizador de Cadastros da Saúde </h2>
+
+<div class="clearfix"></div>
+<div class="table-responsive-lg">
+	<table class="table  table-bordered " id="dataTable">
+	<thead class="thead-defaultinverse ">
+		<tr>
+			
+			<th>Nome</th>
+			<th>CPF</th>
+			<th>SUS</th>
+			
+			<th>Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		{{# each tasks }}
+		<tr>
+			
+			<td class="upper">{{ this.nome }}</td>
+			<td>{{ this.cpf }}</td>
+			<td>{{ this.sus }}</td>
+			
+
+
+
+
+			<td>
+				<div>
+					
+					<a href="" data-toggle="modal" data-target="#modalView{{ this._id }}" class="btn btn-info btn-sm" >Visualizar </a>
+					
+
+
+					<!-- Delete Modal -->
+					<div class="modal fade" id="modalDelete{{ this._id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title text-danger" id="exampleModalLabel">Deletar Cadastro ?<mark>{{ this._id }}</mark></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<form action="/delete" method="post">
+										<input type="hidden" name="id" value="{{ this._id }}">
+										<button type="submit" class="btn btn-danger mt-3">Deletar</button>
+										<button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cancelar</button>
+
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<!-- View Modal -->
+					<div class="modal fade" id="modalView{{ this._id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel"><mark>ID do Cadastro: {{ this._id }}</mark></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body" id="teste">
+									<div class ="nome">
+										<strong>Nome: </strong> <br>
+										{{ this.nome }}
+									</div>
+									<div class="nomemae">
+										<strong>Nome da Mãe: </strong> <br>
+										{{ this.nomemae }}
+									</div>
+									<div>
+										<strong>Nascimento: </strong> <br>
+										{{ this.nascimento }}
+									</div>
+									<div>
+										<strong>Gênero: </strong> <br>
+										{{ this.genero }}
+											{{ this.sexo }}
+									</div>
+									<div>
+										<strong>Etnia: </strong> <br>
+										{{ this.etnia }}
+										{{ this.cor}}
+									</div>
+									<div>
+										<strong>Deficiência: </strong> <br>
+										{{ this.deficiencia }}
+									</div>
+									<div>
+										<strong>Email: </strong> <br>
+										{{ this.email }}
+									</div>
+									<div>
+										<strong>Telefone fixo: </strong> <br>
+										{{ this.telefonefixo }}
+									</div>
+
+									<div>
+										<strong>Celular: </strong> <br>
+										{{ this.celular }}
+									</div>
+									<div>
+										<strong>RG: </strong> <br>
+										{{ this.fisico }}
+									</div>
+									<div>
+										<strong>CPF: </strong> <br>
+										{{ this.cpf }}
+									</div>
+									<div>
+										<strong>SUS: </strong> <br>
+										{{ this.sus }}
+									</div>
+
+									<div>
+										<strong>CEP: </strong> <br>
+										{{ this.cep }}
+									</div>
+
+									<div>
+										<strong>Rua: </strong> <br>
+										{{ this.rua }}
+									</div>
+
+									<div>
+										<strong>Número: </strong> <br>
+										{{ this.numero }}
+									</div>
+
+									<div>
+										<strong>Complemento: </strong> <br>
+										{{ this.complemento }}
+									</div>
+
+									<div>
+										<strong>Bairro: </strong> <br>
+										{{ this.bairro }}
+									</div>
+
+									<div>
+										<strong>Cidade: </strong> <br>
+										{{ this.cidade }}
+									</div>
+
+									<div>
+										<strong>Estado: </strong> <br>
+										{{ this.estado }}
+									</div>
+
+									<div>
+										<strong>Tipo de Conta: </strong> <br>
+										{{ this.comprovanteendereco }}
+									</div>
+
+									<div>
+										<strong>Comprovante de Endereço: </strong> <br>
+										{{ this.img }}
+									</div>
+
+
+									<button type="button" class=" mt-4 btn btn-info" data-dismiss="modal" aria-label="Close">
+										Ok
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</td>
+		</tr>
+
+		{{/each}}
+
+	</tbody>
+	</table>
+	
+</div>
+
