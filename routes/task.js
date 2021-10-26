@@ -2,7 +2,7 @@ const { application } = require('express');
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-mongoose.connect("", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/teste", { useNewUrlParser: true });
 
 
 var Schema = mongoose.Schema;
@@ -13,8 +13,6 @@ var TaskSchema = new Schema({
 	nomemae: {type: String},
 	nascimento: {type: String},
 	deficiencia:{type: String},
-	genero: {type: String},
-	etnia: {type: String},
 	email: {type: String},
 	telefonefixo: {type: String},
 	celular: {type: String}, 
@@ -33,7 +31,7 @@ var TaskSchema = new Schema({
 
 
 
-}, {collection: 'tasks'});
+}, {collection: 'categorias'});
 
 
 
